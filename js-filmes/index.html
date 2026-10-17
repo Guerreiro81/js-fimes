@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organize seus filmes e séries favoritos no Cine Pipoca.">
+    <title>Cine Pipoca</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <header>
+            <h1>🎬 Cine Pipoca</h1>
+            <p>Organize seus filmes e séries favoritos!</p>
+        </header>
+
+        <section class="bloco" aria-labelledby="titulo-busca">
+            <h2 id="titulo-busca">🔎 Buscar Filme</h2>
+
+            <label for="buscarFilme">Nome do filme</label>
+            <input
+                type="text"
+                id="buscarFilme"
+                placeholder="Digite o nome do filme">
+
+            <button id="btnBuscar" type="button">
+                Buscar Filme
+            </button>
+
+            <div id="resultadoBusca" aria-live="polite"></div>
+        </section>
+
+        <section class="bloco" aria-labelledby="titulo-filmes">
+            <h2 id="titulo-filmes">🎬 Meus Filmes</h2>
+
+            <label for="nomeFilme">Nome do filme</label>
+            <input
+                type="text"
+                id="nomeFilme"
+                placeholder="Nome do filme">
+
+            <label for="genero">Gênero</label>
+            <input
+                type="text"
+                id="genero"
+                placeholder="Gênero">
+
+            <label for="ano">Ano de lançamento</label>
+            <input
+                type="number"
+                id="ano"
+                placeholder="Ano de lançamento">
+
+            <button id="btnCadastrarFilme" type="button">
+                Cadastrar Filme
+            </button>
+
+            <p id="contadorFilmes">Filmes cadastrados: 0</p>
+
+            <div id="listaFilmes"></div>
+        </section>
+
+        <hr>
+
+        <section class="bloco" aria-labelledby="titulo-series">
+            <h2 id="titulo-series">📺 Minhas Séries</h2>
+
+            <label for="nomeSerie">Nome da série</label>
+            <input
+                type="text"
+                id="nomeSerie"
+                placeholder="Nome da série">
+
+            <label for="generoSerie">Gênero</label>
+            <input
+                type="text"
+                id="generoSerie"
+                placeholder="Gênero">
+
+            <label for="temporadas">Número de temporadas</label>
+            <input
+                type="number"
+                id="temporadas"
+                placeholder="Número de temporadas">
+
+            <label for="status">Status</label>
+            <select id="status">
+                <option value="">Selecione o status</option>
+                <option value="Assistindo">Assistindo</option>
+                <option value="Concluída">Concluída</option>
+                <option value="Pausada">Pausada</option>
+            </select>
+
+            <button id="btnCadastrarSerie" type="button">
+                Cadastrar Série
+            </button>
+
+            <p id="contadorSeries">Séries cadastradas: 0</p>
+
+            <div id="listaSeries"></div>
+        </section>
+
+        <footer>
+            <button id="btnModoEscuro" type="button">
+                🌙 Modo Escuro
+            </button>
+            <p>Cine Pipoca — Seus favoritos em um só lugar.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+
+/* ==========================
+   1. CONFIGURAÇÕES GERAIS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #10131a;
+    --cor-container: #191e29;
+    --cor-card: #222938;
+    --cor-destaque: #e50914;
+    --cor-destaque-hover: #b80710;
+    --cor-texto: #f5f5f5;
+    --cor-texto-secundario: #b8c0cc;
+    --cor-borda: #343d4e;
+    --cor-input: #121722;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 30px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ==========================
+   2. CONTAINER PRINCIPAL
+========================== */
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--cor-container);
+    border: 1px solid var(--cor-borda);
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================
+   3. CABEÇALHO
+========================== */
+
+header {
+    text-align: center;
+    padding: 15px 0 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--cor-destaque);
+    margin-bottom: 8px;
+}
+
+header p {
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+}
+
+/* ==========================
+   4. SEÇÕES
+========================== */
+
+.bloco {
+    margin: 24px 0;
+    padding: 24px;
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+}
+
+.bloco h2 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: var(--cor-texto);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--cor-borda);
+    margin: 30px 0;
+}
+
+/* ==========================
+   5. FORMULÁRIOS
+========================== */
+
+label {
+    display: block;
+    margin: 14px 0 6px;
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+input,
+select {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px;
+    margin-bottom: 14px;
+    background-color: var(--cor-input);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.18);
+}
+
+input::placeholder {
+    color: #8993a3;
+}
+
+/* ==========================
+   6. BOTÕES
+========================== */
+
+button {
+    padding: 12px 18px;
+    background-color: var(--cor-destaque);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--cor-destaque-hover);
+    transform: translateY(-2px);
+}
+
+button:focus-visible {
+    outline: 3px solid #ff858a;
+    outline-offset: 3px;
+}
+
+/* ==========================
+   7. CONTADORES
+========================== */
+
+#contadorFilmes,
+#contadorSeries {
+    margin: 18px 0;
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* ==========================
+   8. CARTÕES DE FILMES E SÉRIES
+========================== */
+
+#listaFilmes,
+#listaSeries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.filme {
+    min-width: 0;
+    padding: 18px;
+    background-color: var(--cor-container);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.filme:hover {
+    transform: translateY(-4px);
+    border-color: var(--cor-destaque);
+}
+
+.filme h3 {
+    margin-bottom: 12px;
+    color: var(--cor-texto);
+    font-size: 1.1rem;
+}
+
+.filme p {
+    margin: 8px 0;
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+.filme button {
+    margin-top: 14px;
+    padding: 9px 14px;
+    background-color: #4b5565;
+    font-size: 0.85rem;
+}
+
+.filme button:hover {
+    background-color: #68758a;
+}
+
+/* ==========================
+   9. RESULTADO DA BUSCA
+========================== */
+
+#resultadoBusca {
+    margin-top: 20px;
+}
+
+#resultadoBusca .filme img {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    margin: 0 auto 18px;
+    border-radius: 10px;
+}
+
+#resultadoBusca .filme h2 {
+    margin-bottom: 12px;
+}
+
+/* ==========================
+   10. RODAPÉ
+========================== */
+
+footer {
+    margin-top: 30px;
+    padding-top: 24px;
+    text-align: center;
+    border-top: 1px solid var(--cor-borda);
+}
+
+footer p {
+    margin-top: 14px;
+    color: var(--cor-texto-secundario);
+    font-size: 0.85rem;
+}
+
+/* ==========================
+   11. MODO CLARO
+========================== */
+
+body:not(.dark-mode) {
+    --cor-fundo: #f0f2f5;
+    --cor-container: #ffffff;
+    --cor-card: #f8f9fc;
+    --cor-texto: #202633;
+    --cor-texto-secundario: #5c6574;
+    --cor-borda: #d9dee7;
+    --cor-input: #ffffff;
+}
+
+body:not(.dark-mode) .filme {
+    background-color: #ffffff;
+}
+
+body:not(.dark-mode) .filme button {
+    background-color: #4b5565;
+}
+
+body:not(.dark-mode) .filme button:hover {
+    background-color: #68758a;
+}
+
+/* ==========================
+   12. RESPONSIVIDADE
+========================== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px 8px;
+    }
+
+    .container {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .bloco {
+        padding: 16px;
+    }
+
+    .bloco h2 {
+        font-size: 1.2rem;
+    }
+
+    #listaFilmes,
+    #listaSeries {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
